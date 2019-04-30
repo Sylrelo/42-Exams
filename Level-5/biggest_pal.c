@@ -6,7 +6,7 @@
 /*   By: slopez <slopez@student.le-101.fr>          +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/04/26 23:17:08 by slopez       #+#   ##    ##    #+#       */
-/*   Updated: 2019/04/30 16:11:47 by slopez      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/30 16:20:07 by slopez      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -37,7 +37,7 @@ void			biggest_pal(char *str)
 		if (k + 1 >= pal.size)
 			pal = (t_pal) {.begin = i, .size = k + 1};
 		while (str[i + ++j + k] && str[i - j] && str[i + j + k] == str[i - j])
-			if (2 * j + k >= pal.size)
+			if (2 * j + k + 1 >= pal.size)
 				pal = (t_pal) {.begin = i - j, .size = 2 * j + k + 1};
 	}
 	write(1, str + pal.begin, pal.size);
